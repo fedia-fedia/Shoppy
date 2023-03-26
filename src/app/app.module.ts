@@ -10,13 +10,11 @@ import { ProductsingleComponent } from './productsingle/productsingle.component'
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ShopComponent } from './shop/shop.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ProfileDetailsComponent } from './profile-details/profile-details.component';
-import { AddressComponent } from './address/address.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -30,6 +28,11 @@ import { UpdateproductComponent } from './productuser/updateproduct/updateproduc
 import { AdduserComponent } from './admin/user/adduser/adduser.component';
 import { DisplayuserComponent } from './admin/user/displayuser/displayuser.component';
 import { ContactComponent } from './contact/contact.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
+import { ListofproductsComponent } from './listofproducts/listofproducts.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,13 +43,11 @@ import { ContactComponent } from './contact/contact.component';
     CartComponent,
     CheckoutComponent,
     ShopComponent,
-    DashboardComponent,
     OrdersComponent,
     LoginComponent,
     SignupComponent,
     ForgotPasswordComponent,
     ProfileDetailsComponent,
-    AddressComponent,
     EditAddressComponent,
     FaqsComponent,
     ErrComponent,
@@ -56,7 +57,12 @@ import { ContactComponent } from './contact/contact.component';
     UpdateproductComponent,
     AdduserComponent,
     DisplayuserComponent,
-    ContactComponent
+    ContactComponent,
+    FavoritesComponent,
+    AjoutProduitComponent,
+    MyprofileComponent,
+    ListofproductsComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { AddressComponent } from './address/address.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ContactComponent } from './contact/contact.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
 import { ErrComponent } from './err/err.component';
 import { FaqsComponent } from './faqs/faqs.component';
@@ -20,6 +18,12 @@ import { UpdateproductComponent } from './productuser/updateproduct/updateproduc
 import { ProfileDetailsComponent } from './profile-details/profile-details.component';
 import { ShopComponent } from './shop/shop.component';
 import { SignupComponent } from './signup/signup.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
+import { ListofproductsComponent } from './listofproducts/listofproducts.component';
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+
 
 const routes: Routes = [
   {
@@ -30,16 +34,10 @@ const routes: Routes = [
     path:"product-single",component:ProductsingleComponent
   },
   {
-    path:"address",component:AddressComponent
-  } ,
-  {
   path:"cart",component:CartComponent  
   },
   {
     path:"checkout",component:CheckoutComponent
-  },
-  {
-    path:"dashboard",component:DashboardComponent
   },
   {
     path:"edit-address",component:EditAddressComponent
@@ -51,7 +49,7 @@ const routes: Routes = [
     path:"login",component:LoginComponent
   },
   {
-    path:"order",component:OrdersComponent
+    path:"orders",component:OrdersComponent
   },
   {
     path:"profile-details",component:ProfileDetailsComponent
@@ -67,6 +65,21 @@ const routes: Routes = [
   },
   {
     path:"about",component:AboutComponent
+  },
+  {
+    path:"favorites",component:FavoritesComponent
+  },
+  {
+    path:"myprofile",component:MyprofileComponent
+  },
+  {
+    path:"listofproducts",component:ListofproductsComponent
+  },
+  {
+    path:"ajout-produit",component:AjoutProduitComponent
+  },
+  {
+    path:"update-product",component:UpdateProductComponent
   },
   //  user add product 
   {
