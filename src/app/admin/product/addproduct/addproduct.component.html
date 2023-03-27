@@ -1,1 +1,48 @@
-<p>addproduct works!</p>
+  
+
+    <div style="display: flex;justify-content: center;">
+      <div class="card" style="width: 50rem; ">
+          <div class="card-body">
+            <h5 style="text-align: center;" class="card-title">Add Product</h5>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Title</label>
+              <input formControlName="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Product Title">
+              <!-- title.email && title.invalid && title.touched -->
+             </div>
+            <div class="mb-3">
+              <label>Description</label>
+              <input formControlName="description" type="text" class="form-control"  placeholder="Description">
+              <div *ngIf="control.controls['description'].invalid && control.controls['description'].touched">
+                <div class="alert alert-danger" *ngIf="control.controls['description'].errors['required'] ">
+                   description is required.
+                </div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-around;">
+              <select formControlName="gender" class="form-select" aria-label="Default select example">
+                  <option selected>select gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  
+                </select>
+                
+                <select formControlName="type" class="form-select" aria-label="Default select example">
+                  <option selected>select type</option>
+                  <option value="clothes">clothes</option>
+                  <option value="shoes">shoes</option>
+                  <option value="accessory">accessory</option>
+                  <option value="bags">bags</option>
+                </select>
+                  
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">price</label>
+              <input formControlName="prix" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Price">
+            
+            </div>
+            <button  style="display: flex; border-radius: 8px ;" type="submit" class="btn btn-secondary">Add Product</button>
+  
+          </div>
+        </div>
+    </div>
+<div></div>
