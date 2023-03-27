@@ -1,5 +1,6 @@
 const path = require('path');
 
+
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
@@ -23,6 +24,14 @@ dbConnection();
 const app = express();
 
 // Enable other domains to access your application
+app.all('*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
 app.use(cors());
 app.options('*', cors());
 

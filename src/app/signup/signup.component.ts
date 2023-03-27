@@ -14,16 +14,18 @@ export class SignupComponent {
 
 
 
-  registerForm = new FormGroup({
+  myForm = new FormGroup({
     email :new FormControl(""),
     name :new FormControl(""),
     password :new FormControl(""),
-    repassword :new FormControl("")
+    passwordConfirm :new FormControl("")
   })
-  reg(){
-    this.service.signup(this.registerForm.value).subscribe((data:any)=>{
+  onSubmit(){
+    this.service.signup(this.myForm.value).subscribe((data:any)=>{
       console.log(data)
     })
+    
+
 
   }
 }
