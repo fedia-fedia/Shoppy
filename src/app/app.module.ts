@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+//import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +35,7 @@ import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ListofproductsComponent } from './listofproducts/listofproducts.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,9 +72,9 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     AppRoutingModule,
     SlickCarouselModule,
     FormsModule,ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,NgxPaginationModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,7 +25,7 @@
                   <h2 class="d-block text-left-sm">Shop</h2>
   
                   <div class="heading d-flex justify-content-between mb-5">
-                    <p class="result-count mb-0"> Showing 1–6 of 17 results </p>
+                    <p class="result-count mb-0"> Showing 1–6 of {{result}} results </p>
                     <form class="ordering" method="get">
                         <select name="orderby" class="orderby form-control border-dark rounded" aria-label="Shop order" >
                             <option value="" selected="selected"> Default sorting </option>
@@ -43,34 +43,36 @@
           </div>
   
       <!-- Products -->
-      <div class="row">
+      <div class="row" >
 
          <!-- Product1 -->
-         <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
-          <div class="product border border-secondary">
-            <div class="product-wrap">
-                <a href="product-single">
-                  <img class="img-fluid w-100 mb-3 img-first" src="assets/images/women1.jpg" alt="product-img" />
-                </a>
-            </div>
-
-            <span class="onsale bg-black">Sale</span>
-            <div class="product-hover-overlay">
-                <a href="cart"><i class="tf-ion-android-cart"></i></a>
-                <a href="favorites"><i class="tf-ion-ios-heart"></i></a>
+         <div style="display: flex;flex-wrap: wrap;justify-content: space-around;">
+          <div  *ngFor="let item of collection | paginate: { itemsPerPage: 6, currentPage: p };let index = index" class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5" >
+            <div class="product border border-secondary">
+              <div class="product-wrap">
+                  <a [routerLink]="['/product-single/',item.id]">
+                    <img class="img-fluid w-100 mb-3 img-first" [src]="item.imageCover.substr(19)" alt="product-img" />
+                  </a>
               </div>
-
-            <div class="product-info">
-                <h2 class="product-title h5 mb-0"><a href="#">Floral Kirby</a></h2>
-                <span class="price">
-                    329.10 DT
-                </span>
-            </div>
+  
+              <span class="onsale bg-black">Sale</span>
+              <div class="product-hover-overlay">
+                  <a href="cart"><i class="tf-ion-android-cart"></i></a>
+                  <a href="favorites"><i class="tf-ion-ios-heart"></i></a>
+                </div>
+  
+              <div class="product-info">
+                  <h2 class="product-title h5 mb-0"><a href="#">{{item.title}}</a></h2>
+                  <span class="price">
+                      {{item.price}} DT
+                  </span>
+              </div>
+          </div>
         </div>
-      </div>
-
+         </div>
+         
       <!-- Product2 -->
-      <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
+      <!-- <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
         <div class="product border border-secondary">
             <div class="product-wrap">
                 <a href="product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/women9.jpg" alt="product-img" /></a>
@@ -88,10 +90,10 @@
                 </span>
             </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Product3 -->
-      <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
+      <!-- <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
         <div class="product border border-secondary">
             <div class="product-wrap">
                 <a href="product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/women2.jpg" alt="product-img" /></a>
@@ -110,11 +112,11 @@
                 </span>
             </div>
         </div>
-      </div>
+      </div> -->
 
 
       <!-- Product4 -->
-      <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
+      <!-- <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
         <div class="product border border-secondary">
             <div class="product-wrap">
                 <a href="product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/men11.jpg" alt="product-img" /></a>
@@ -132,10 +134,10 @@
                 </span>
             </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Product5 -->
-      <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
+      <!-- <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
         <div class="product border border-secondary">
             <div class="product-wrap">
                 <a href="product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/men4.jpg" alt="product-img" /></a>
@@ -153,10 +155,10 @@
                 </span>
             </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Product6 -->
-      <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
+      <!-- <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
         <div class="product border border-secondary">
             <div class="product-wrap">
                 <a href="product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/men8.jpg" alt="product-img" /></a>
@@ -174,9 +176,9 @@
                 </span>
             </div>
         </div>
-      </div>
+      </div> -->
   
-            <div class="col-12">
+            <!-- <div class="col-12">
               <nav aria-label="Page navigation">
                 <ul class="pagination">
                   <li class="page-item">
@@ -194,8 +196,13 @@
                   </li>
                 </ul>
               </nav>
-            </div>
-      </div>				
+            </div> -->
+              <div style="display: flex;
+              justify-content: center;">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+              </div>
+          </div>				
     </div>
 
 

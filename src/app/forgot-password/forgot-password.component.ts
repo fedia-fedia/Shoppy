@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,4 +9,21 @@ import { Component } from '@angular/core';
 })
 export class ForgotPasswordComponent {
 
+  constructor(private service:AuthService){}
+
+
+
+  myForm = new FormGroup({
+    email :new FormControl(""),
+  
+  })
+  onSubmit(){
+    console.log()
+    this.service.forget(this.myForm.value.email).subscribe((data:any)=>{
+      console.log(data)
+    })
+    
+
+
+  }
 }

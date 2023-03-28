@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import {enableProdMode} from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 
 enableProdMode();
@@ -12,8 +13,7 @@ enableProdMode();
 })
 
 export class LoginComponent {
-  constructor(private authService: AuthService) {
-  
+  constructor(private authService: AuthService,private cookieService: CookieService) {
   }
   
   myForm = new FormGroup({
@@ -22,9 +22,12 @@ export class LoginComponent {
 
   })
   onSubmit(){
-    this.authService.signup(this.myForm.value).subscribe((data:any)=>{
-      console.log(data)
-      
+    this.authService.signin(this.myForm.value).subscribe((data:any)=>{
+      //console.log(data.token)
+      let expireDate = new Date();
+      expireDate.setDate(expireDate.getDate() + 7); 
+      this.cookieService.set('token', data.token, expireDate);
+     console.log("this is stored token in cookies"+" "+this.cookieService.get('token'))
     })
     console.log(this.myForm.value)
 

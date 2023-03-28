@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   
   {
-    path:"product-single",component:ProductsingleComponent
+    path:"product-single/:id",component:ProductsingleComponent
   },
   {
   path:"cart",component:CartComponent  

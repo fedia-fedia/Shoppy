@@ -15,15 +15,17 @@
     </div>
   </section>
   
-  <section class="single-product">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5">
+ 
+  <section class="single-product" >
+    <div class="container" >
+     
+      <div class="row" >
+        <div class="col-md-5" >
           <div class="single-product-slider">
             <div class="carousel slide" data-ride="carousel" id="single-product-slider">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="assets/images/women1.jpg" class="img-fluid">
+                  <img [src]="collection.imageCover.substr(19)" class="img-fluid">
                 </div>
               </div>
 
@@ -33,17 +35,17 @@
         
         <div class="col-md-7">
           <div class="single-product-details mt-5 mt-lg-0">
-            <h2>Coat</h2>
+            <h2>{{collection.title}}</h2>
             <div class="sku_wrapper mb-4">
-              SKU: <span class="text-muted">AB1563456789 </span>
+              SKU: <span class="text-muted">{{collection.slug}} </span>
             </div>
   
             <hr>
             
-            <h3 class="product-price"> 300 DT <del> 119.90 DT</del></h3>
+            <h3 class="product-price"> {{collection.priceAfterDiscount}} DT <del> {{collection.price}} DT</del></h3>
             
             <p class="product-description my-4 ">
-              Short coat with a lapel collar and long sleeves. Front pockets. Matching lining. Double-breasted button fastening at the front.
+                  {{collection.description}}
             </p>
   
             <form class="cart" action="#" method="post">
