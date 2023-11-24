@@ -3,8 +3,11 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''npm install
-npm run ng --build'''
+        sh '''rm package-lock.json
+npm cache clean --force
+
+npm install
+'''
         echo 'build completed'
       }
     }
