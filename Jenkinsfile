@@ -4,10 +4,9 @@ pipeline {
     stage('Build') {
       steps {
         echo 'build completed'
-        sh '''sh \'npm install\'
+        sh '''sh \'pwd\'
 echo " npm install"
-sh \'ng build\'
-echo " ng build"'''
+'''
       }
     }
 
