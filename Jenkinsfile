@@ -6,7 +6,8 @@ pipeline {
         sh '''rm package-lock.json
 npm cache clean --force
 
-npm install
+npm install --f
+ng build
 
 '''
         echo 'build completed'
