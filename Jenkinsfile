@@ -4,9 +4,6 @@ pipeline {
     stage('Build') {
       steps {
         echo 'build completed'
-        sh '''sh \'pwd\'
-echo " npm install"
-'''
       }
     }
 
