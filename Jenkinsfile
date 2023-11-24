@@ -3,8 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh '''npm install
+npm run ng --build'''
         echo 'build completed'
-        sh 'npm install'
       }
     }
 
