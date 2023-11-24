@@ -7,6 +7,7 @@ pipeline {
 npm cache clean --force
 
 npm install
+npm run ng --build
 '''
         echo 'build completed'
       }
